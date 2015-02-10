@@ -62,7 +62,7 @@ class vec3d{
   };
 
   //normalizes and returns; use normal to just get the normal
-  vec3d normalize(){
+  vec3d& normalize(){
     double m = magnitude();
     if(m!=0){
       x/=m;
@@ -72,6 +72,16 @@ class vec3d{
     return *this;
   };
 
+    vec3d& normalizeMax(){
+        double mx = std::max(x,std::max(y,z));
+        *this/mx;
+        return *this;
+    }
+    
+    vec3d normalMax()const{
+        vec3d ret = *this;
+        return ret.normalizeMax();
+    }
   //if it's a zero vector, the normal is left as a zero vector
   vec3d normal() const{
     double m = magnitude();
@@ -254,6 +264,7 @@ class mat3d{
 
 inline vec3d operator *(const double v, const vec3d& right) { return vec3d(right.x*v, right.y*v, right.z*v);};
 inline vec3d operator +(const double v, const vec3d& right) { return vec3d(right.x+v, right.y+v, right.z+v);};
+inline vec3d operator /(const double v, const vec3d& right) { return vec3d(v/right.x, v/right.y, v/right.z);};
 
 inline vec3d operator *(const vec3d &left, const mat3d &v) { 
   mat3d t = v.transpose();

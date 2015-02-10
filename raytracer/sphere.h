@@ -33,10 +33,12 @@ public:
         else {
             double t = (sqrt(det)-b);
             double t1 = (-b-sqrt(det));
-            t = (t<t1)?t:t1;
+            
+            t = (t>0)? ((t1>0)?( (t<t1)?t :t1) : t) :t1;
             if (t<=cp.t0 || t> cp.t1){
                 return false;
             }
+            
             cp.p=r.ori+r.dir*t;
             cp.objectId=id;
             cp.m=m;

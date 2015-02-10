@@ -7,6 +7,12 @@
 //
 
 #include "interpol.h"
+#include <random>
+#define initial() if(init==false) initMe()
+
+bool init=false;
+std::default_random_engine generator;
+std::uniform_real_distribution<double> uniform;
 /*
  returns a randomly chosen direction which will land within a bounding rectangle at a distance d away from
  */
@@ -47,5 +53,22 @@ vec3d rectAdjust(vec3d dir, double width, double height){
     X2 = rand()/ (double)RAND_MAX;
     X1= X1*width- width/2;
     X2= X2*height - height/2;
-    return (X1*u+X2*v).normal();
+    vec3d h1 = X1*u;
+    vec3d h2 = X2*v;
+    return (X1*u+X2*v);
+};
+
+void initMe(){
+    uniform = std::uniform_real_distribution<double>(0.0,1.0);
+    init=true;
+};
+
+//uniformly select a random point across (-amt .. amt)
+double linearAdjust(double amt){
+    initial();
+    return uniform(generator)*amt*2-amt;
+};
+
+double lerp(double a, double b, double lerpVal){
+    return lerpVal*a +(1-lerpVal)*b;
 };

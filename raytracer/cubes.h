@@ -12,6 +12,7 @@
 #include "object.h"
 #include "cmath"
 
+
 class cube : public object{
     double r;
     double ang;

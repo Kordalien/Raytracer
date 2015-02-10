@@ -21,6 +21,7 @@ class raytracer{
   //animationController * anim;   //detects intersection events, triggers approaite reponses
   int maxDepth;
     int distributionRays;
+    int subRays;
  public:
   raytracer(int maxDepth, int distributionRays);
     
@@ -31,7 +32,7 @@ class raytracer{
   void castRay(ray &r);
   void getColor(collParam cp, ray &r);
   void reflect(collParam cp, ray &r);
-  void refract(collParam cp, ray &r);
+  bool refract(collParam cp, ray &r, bool entering); //if entering, the ray is entering a new material, othersiwe, exiting one.
   void irradience(collParam cp, ray& initR);
   unsigned char * render(camera c);
 };

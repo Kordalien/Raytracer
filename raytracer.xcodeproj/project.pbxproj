@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		10A451EC19F9A1BA00542C3E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A451EB19F9A1BA00542C3E /* main.cpp */; };
+		10A451FA19F9A28E00542C3E /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A451F219F9A28E00542C3E /* camera.cpp */; };
+		10A451FC19F9A2EE00542C3E /* raytracer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A451FB19F9A2EE00542C3E /* raytracer.cpp */; };
+		10A451FE19FAF1A700542C3E /* interpol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10A451FD19FAF1A700542C3E /* interpol.cpp */; };
+		10C8DB731A896F5E0002D156 /* scene_io.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 10C8DB711A896F5E0002D156 /* scene_io.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,21 @@
 /* Begin PBXFileReference section */
 		10A451E819F9A1BA00542C3E /* raytracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = raytracer; sourceTree = BUILT_PRODUCTS_DIR; };
 		10A451EB19F9A1BA00542C3E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		10A451F219F9A28E00542C3E /* camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = camera.cpp; sourceTree = "<group>"; };
+		10A451F319F9A28E00542C3E /* camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = camera.h; sourceTree = "<group>"; };
+		10A451F419F9A28E00542C3E /* interpol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interpol.h; sourceTree = "<group>"; };
+		10A451F519F9A28E00542C3E /* material.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = material.h; sourceTree = "<group>"; };
+		10A451F619F9A28E00542C3E /* mathlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mathlib.h; sourceTree = "<group>"; };
+		10A451F719F9A28E00542C3E /* object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = object.h; sourceTree = "<group>"; };
+		10A451F819F9A28E00542C3E /* ray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ray.h; sourceTree = "<group>"; };
+		10A451F919F9A28E00542C3E /* raytracer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = raytracer.h; sourceTree = "<group>"; };
+		10A451FB19F9A2EE00542C3E /* raytracer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = raytracer.cpp; sourceTree = "<group>"; };
+		10A451FD19FAF1A700542C3E /* interpol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = interpol.cpp; sourceTree = "<group>"; };
+		10A49C9E19FD737D002C7D9E /* sphere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sphere.h; sourceTree = "<group>"; };
+		10A49CF41A01B6F3002C7D9E /* triangle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = triangle.h; sourceTree = "<group>"; };
+		10A49CF51A01B706002C7D9E /* cubes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cubes.h; sourceTree = "<group>"; };
+		10C8DB711A896F5E0002D156 /* scene_io.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scene_io.cpp; sourceTree = "<group>"; };
+		10C8DB721A896F5E0002D156 /* scene_io.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scene_io.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +76,22 @@
 		10A451EA19F9A1BA00542C3E /* raytracer */ = {
 			isa = PBXGroup;
 			children = (
+				10A451FB19F9A2EE00542C3E /* raytracer.cpp */,
+				10C8DB711A896F5E0002D156 /* scene_io.cpp */,
+				10C8DB721A896F5E0002D156 /* scene_io.h */,
+				10A451F919F9A28E00542C3E /* raytracer.h */,
+				10A451F219F9A28E00542C3E /* camera.cpp */,
+				10A451F319F9A28E00542C3E /* camera.h */,
+				10A451F619F9A28E00542C3E /* mathlib.h */,
+				10A451F419F9A28E00542C3E /* interpol.h */,
+				10A451F819F9A28E00542C3E /* ray.h */,
 				10A451EB19F9A1BA00542C3E /* main.cpp */,
+				10A451FD19FAF1A700542C3E /* interpol.cpp */,
+				10A451F519F9A28E00542C3E /* material.h */,
+				10A49C9E19FD737D002C7D9E /* sphere.h */,
+				10A49CF41A01B6F3002C7D9E /* triangle.h */,
+				10A49CF51A01B706002C7D9E /* cubes.h */,
+				10A451F719F9A28E00542C3E /* object.h */,
 			);
 			path = raytracer;
 			sourceTree = "<group>";
@@ -118,7 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A451FA19F9A28E00542C3E /* camera.cpp in Sources */,
 				10A451EC19F9A1BA00542C3E /* main.cpp in Sources */,
+				10A451FE19FAF1A700542C3E /* interpol.cpp in Sources */,
+				10A451FC19F9A2EE00542C3E /* raytracer.cpp in Sources */,
+				10C8DB731A896F5E0002D156 /* scene_io.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +270,7 @@
 				10A451F119F9A1BA00542C3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

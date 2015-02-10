@@ -12,4 +12,12 @@ extern vec3d squareInterpol(vec3d dir, double range);
  Given direction,
  */
 extern vec3d rectAdjust(vec3d dir, double width, double height);
+
+extern double linearAdjust(double amt);
+
+
+extern double lerp(double a, double b, double lerpVal);
+
+extern double bicubic();
+
 #endif
